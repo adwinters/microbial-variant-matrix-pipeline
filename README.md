@@ -234,7 +234,7 @@ results/
 
 ### Example Output
 
-![Top Variable Products](example_output/top.png)
+![bacterial-variant-matrix-pipeline](top.png)
 
 The heatmap displays products ranked by variability across isolates.
 
@@ -264,7 +264,7 @@ results/
 
 ### Example Output
 
-![Selected Products](example_output/selected.png)
+![bacterial-variant-matrix-pipeline](selected.png)
 
 The heatmap displays a curated panel of biologically relevant gene products selected by the user.
 
