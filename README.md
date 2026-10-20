@@ -24,6 +24,7 @@ The workflow is designed for any bacterial species provided that:
 
 ## Repository Structure
 
+```text
 bacterial-variant-matrix-pipeline/
 │
 ├── scripts/
@@ -41,8 +42,11 @@ bacterial-variant-matrix-pipeline/
 ├── results/
 │
 ├── example_output/
+│   ├── top.png
+│   └── selected.png
 │
 └── README.md
+```
 
 The FASTA and GFF files should correspond to the same reference assembly.
 
