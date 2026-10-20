@@ -105,7 +105,7 @@ Selected Product Heatmap
 
 ## Methods
 
-Reads are aligned against a reference genome using BWA-MEM. Variants are jointly called using BCFtools and aggregated by annotated gene product using the supplied GFF annotation. Product-level variant counts are transformed into a sample-by-product matrix and optionally standardized using Z-score normalization prior to heatmap generation.
+Reads are aligned against a reference genome using BWA-MEM. Variants are jointly called using BCFtools and aggregated by annotated gene product using the supplied GFF annotation. Product-level variant counts are transformed into a sample-by-product matrix and standardized using Z-score normalization prior to heatmap generation.
 
 
 # Step 1: Variant Calling
