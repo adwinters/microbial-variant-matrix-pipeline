@@ -17,33 +17,6 @@ The workflow can be applied to microbial isolate whole-genome sequencing dataset
 - A corresponding GFF annotation file is available
 - Paired-end genomic DNA FASTQ files are available for each isolate
 
-## Repository Structure
-
-```text
-bacterial-variant-matrix-pipeline/
-│
-├── scripts/
-│   ├── call_variants.sh
-│   ├── build_product_variant_matrix.py
-│   ├── select_products.sh
-│   └── plot_selected_products_heatmap.py
-│
-├── reference/
-│   ├── genome.fna
-│   └── genome.gff
-│
-├── fastq/
-│
-├── results/
-│
-├── example_output/
-│   ├── top.png
-│   └── selected.png
-│
-└── README.md
-```
-
-The FASTA and GFF files should correspond to the same reference assembly.
 
 ## Software Requirements
 
