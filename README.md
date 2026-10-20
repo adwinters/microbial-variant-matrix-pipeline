@@ -204,7 +204,7 @@ results/
 
 The heatmap script supports two modes:
 
-## A. Most Variable Products
+## Option A. Most Variable Products
 
 Plot the most variable products across all isolates.
 
@@ -234,7 +234,7 @@ results/
 The heatmap displays products ranked by variability across isolates.
 
 
-## B. Curated Product Panel
+## Option B. Curated Product Panel
 
 Plot products listed in:
 ```text
