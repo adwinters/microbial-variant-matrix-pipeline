@@ -17,7 +17,7 @@ The workflow can be applied to microbial isolate whole-genome sequencing dataset
 - A GFF annotation file corresponding to the reference FASTA is available and contains `gene` features, `locus_tag` annotations, and associated `product` annotations for coding sequences
 - Paired-end genomic DNA FASTQ files are available for each isolate
 
-Variants are aggregated from the supplied VCF and summarized at the annotated gene-product level. The workflow does not currently perform core-genome filtering or coverage-based normalization across isolates and therefore assumes that variant calls have been generated from sequencing datasets of comparable quality and depth.
+Variants are aggregated from the supplied VCF and summarized at the annotated gene-product level. The workflow does not currently perform coverage-based normalization across isolates and therefore assumes that variant calls have been generated from sequencing datasets of comparable quality and depth.
   
 
 ## Software Requirements
