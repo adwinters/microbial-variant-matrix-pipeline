@@ -73,6 +73,7 @@ pip install pandas numpy scipy matplotlib seaborn
 
 ## Pipeline Workflow
 
+```text
 Paired-End FASTQ Files
             │
             ▼
@@ -105,6 +106,7 @@ plot_selected_products_heatmap.py
             │
             ▼
 Selected Product Heatmap
+```
 
 ## Methods
 
