@@ -1,4 +1,4 @@
-# Bacterial Variant Matrix Pipeline
+<img width="1317" height="2268" alt="image" src="https://github.com/user-attachments/assets/d0f81bfb-ad9e-41ea-b55c-cd5881d5a74e" /># Bacterial Variant Matrix Pipeline
 
 Reference-guided comparative genomics workflow for bacterial isolates using paired-end sequencing reads, joint variant calling, gene-product matrix generation, and heatmap visualization.
 
@@ -197,12 +197,6 @@ results/
 The matrix structure is:
 
 ```text
-Sample × Product
-```
-
-Example:
-
-```text
 Sample      Cas1   Tet(Q)   CfxA
 Isolate1      2       5       0
 Isolate2      1       8       3
@@ -237,42 +231,30 @@ results/
 └── selected_genes.tsv
 ```
 
-Example products:
+# Step 4: Generate Heatmaps
 
-```text
-CfxA family broad-spectrum class A beta-lactamase
-tetracycline resistance ribosomal protection protein Tet(Q)
-type II CRISPR-associated endonuclease Cas1
-DNA primase
-DNA mismatch repair protein MutS
-sialidase family protein
-hemolysin family protein
-```
+The heatmap script supports two modes:
 
----
+## A. Most Variable Products
 
-# Step 4A: Plot Most Variable Products
+Plot the most variable products across all isolates.
 
-Identify and visualize the most variable products across all isolates.
-
-## Default (Top 20 Products)
+### Default (Top 20 Products)
 
 ```bash
 python3 plot_selected_products_heatmap.py \
     results/variants_per_product_matrix.csv
 ```
 
-## Custom Number of Products
+### Custom Number of Products
 
 ```bash
 python3 plot_selected_products_heatmap.py \
     results/variants_per_product_matrix.csv \
-    50
+    20
 ```
 
-## Outputs
-
-Default:
+Outputs:
 
 ```text
 results/
@@ -280,21 +262,17 @@ results/
 └── products_plotted_top20.tsv
 ```
 
-Custom example:
+### Example Output
 
-```text
-results/
-├── variants_per_product_heatmap_top50.png
-└── products_plotted_top50.tsv
-```
+![Top Variable Products](example_output/top.png)
 
 The heatmap displays products ranked by variability across isolates.
 
 ---
 
-# Step 4B: Plot Curated Products
+## B. Curated Product Panel
 
-Generate a heatmap using products listed in:
+Plot products listed in:
 
 ```text
 selected_genes.tsv
@@ -302,13 +280,28 @@ selected_genes.tsv
 
 Invariant products are automatically removed before plotting.
 
-## Usage
+### Usage
 
 ```bash
 python3 plot_selected_products_heatmap.py \
     results/variants_per_product_matrix.csv \
     results/selected_genes.tsv
 ```
+
+Outputs:
+
+```text
+results/
+├── variants_per_product_heatmap_selected.png
+└── products_plotted_selected.tsv
+```
+
+### Example Output
+
+![Selected Products](example_output/selected.png)
+
+The heatmap displays a curated panel of biologically relevant gene products selected by the user.
+
 
 ## Pipeline Outputs
 
@@ -327,8 +320,4 @@ variants_per_product_heatmap_topN.png
 ```
 
 ---
-
-
-
-## Example Outputs
 
