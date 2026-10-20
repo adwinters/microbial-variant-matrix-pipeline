@@ -1,8 +1,7 @@
-<img width="1317" height="2268" alt="image" src="https://github.com/user-attachments/assets/d0f81bfb-ad9e-41ea-b55c-cd5881d5a74e" /># Bacterial Variant Matrix Pipeline
+# bacterial-variant-matrix-pipeline
 
 Reference-guided comparative genomics workflow for bacterial isolates using paired-end sequencing reads, joint variant calling, gene-product matrix generation, and heatmap visualization.
 
----
 
 ## Overview
 
@@ -23,11 +22,8 @@ The workflow is designed for any bacterial species provided that:
 - A corresponding GFF annotation file is available
 - Paired-end FASTQ files are available for each isolate
 
----
-
 ## Repository Structure
 
-```text
 bacterial-variant-matrix-pipeline/
 │
 ├── scripts/
@@ -47,44 +43,32 @@ bacterial-variant-matrix-pipeline/
 ├── example_output/
 │
 └── README.md
-```
 
 The FASTA and GFF files should correspond to the same reference assembly.
-
----
 
 ## Software Requirements
 
 ### Variant Calling
 
-```text
 BWA >= 0.7.17
 SAMtools >= 1.21
 BCFtools
-```
+
 
 ### Python
-
-```text
 Python >= 3.10
 pandas
 numpy
 scipy
 matplotlib
 seaborn
-```
 
 Install Python dependencies:
 
-```bash
 pip install pandas numpy scipy matplotlib seaborn
-```
-
----
 
 ## Pipeline Workflow
 
-```text
 Paired-End FASTQ Files
             │
             ▼
@@ -117,9 +101,6 @@ plot_selected_products_heatmap.py
             │
             ▼
 Selected Product Heatmap
-```
-
----
 
 ## Methods
 
@@ -142,14 +123,11 @@ bash call_variants.sh \
 
 ## Inputs
 
-```text
 Reference FASTA
 Paired-end FASTQ files
-```
+
 
 ## Outputs
-
-```text
 results/
 ├── variants.vcf
 └── variant_summary.txt
@@ -157,14 +135,11 @@ results/
 
 ### Example Variant Summary
 
-```text
 Sample     Total_variants    SNPs    Indels
 Isolate1   58364             56663   1701
 Isolate2   57902             56200   1702
 Isolate3   57486             55792   1694
-```
 
----
 
 # Step 2: Build Product-Level Variant Matrix
 
@@ -172,37 +147,31 @@ Convert variant calls into a sample-by-product matrix using the reference annota
 
 ## Usage
 
-```bash
 python3 build_product_variant_matrix.py \
     results/variants.vcf \
     reference/genome.gff \
     results
-```
 
 ## Inputs
 
-```text
 variants.vcf
 genome.gff
-```
+
 
 ## Outputs
 
-```text
 results/
 ├── variants_table.tsv
 └── variants_per_product_matrix.csv
-```
+
 
 The matrix structure is:
 
-```text
 Sample      Cas1   Tet(Q)   CfxA
 Isolate1      2       5       0
 Isolate2      1       8       3
-```
 
----
+
 
 # Step 3: Generate Curated Product List
 
@@ -220,16 +189,14 @@ Current targets include:
 
 ## Usage
 
-```bash
 bash select_products.sh results
-```
+
 
 ## Output
 
-```text
 results/
 └── selected_genes.tsv
-```
+
 
 # Step 4: Generate Heatmaps
 
@@ -241,26 +208,21 @@ Plot the most variable products across all isolates.
 
 ### Default (Top 20 Products)
 
-```bash
 python3 plot_selected_products_heatmap.py \
     results/variants_per_product_matrix.csv
-```
 
 ### Custom Number of Products
 
-```bash
 python3 plot_selected_products_heatmap.py \
     results/variants_per_product_matrix.csv \
     20
-```
 
 Outputs:
 
-```text
 results/
 ├── variants_per_product_heatmap_top20.png
 └── products_plotted_top20.tsv
-```
+
 
 ### Example Output
 
@@ -268,33 +230,29 @@ results/
 
 The heatmap displays products ranked by variability across isolates.
 
----
 
 ## B. Curated Product Panel
 
 Plot products listed in:
 
-```text
 selected_genes.tsv
-```
+
 
 Invariant products are automatically removed before plotting.
 
 ### Usage
 
-```bash
 python3 plot_selected_products_heatmap.py \
     results/variants_per_product_matrix.csv \
     results/selected_genes.tsv
-```
+
 
 Outputs:
 
-```text
 results/
 ├── variants_per_product_heatmap_selected.png
 └── products_plotted_selected.tsv
-```
+
 
 ### Example Output
 
@@ -305,7 +263,6 @@ The heatmap displays a curated panel of biologically relevant gene products sele
 
 ## Pipeline Outputs
 
-```text
 variants.vcf
 variant_summary.txt
 variants_table.tsv
@@ -317,7 +274,5 @@ products_plotted_topN.tsv
 
 variants_per_product_heatmap_selected.png
 variants_per_product_heatmap_topN.png
-```
 
----
 
