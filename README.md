@@ -39,6 +39,7 @@ Install Python dependencies:
 
 pip install pandas numpy scipy matplotlib seaborn
 
+
 ## Pipeline Workflow
 
 ```text
@@ -115,6 +116,7 @@ Isolate2   57902             56200   1702
 Isolate3   57486             55792   1694
 ```
 
+
 # Step 2: Build Product-Level Variant Matrix
 
 Convert variant calls into a sample-by-product matrix using the reference annotation.
@@ -172,6 +174,7 @@ bash select_products.sh results
 results/
 └── selected_genes.tsv
 ```
+
 
 # Step 4: Generate Heatmaps
 
