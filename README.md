@@ -1,11 +1,6 @@
-# bacterial-variant-matrix-pipeline
+# microbial-variant-matrix-pipeline
 
-Reference-guided comparative genomics workflow for bacterial isolates using paired-end sequencing reads, joint variant calling, gene-product matrix generation, and heatmap visualization.
-
-
-## Overview
-
-This repository provides an end-to-end workflow for comparative genomic analysis of bacterial isolates using a reference genome assembly and paired-end sequencing reads.
+This pipeline transforms sequencing reads into product-level variant matrices for comparative genomic analysis and visualization. Starting from paired-end FASTQ files, the workflow performs read alignment, joint variant calling, variant aggregation by annotated gene product, and heatmap generation.
 
 The pipeline performs:
 
@@ -16,11 +11,11 @@ The pipeline performs:
 5. Identification of highly variable gene products
 6. Visualization of variant patterns through clustered heatmaps
 
-The workflow is designed for any bacterial species provided that:
+The workflow can be applied to microbial isolate whole-genome sequencing datasets provided that:
 
 - A reference FASTA file is available
 - A corresponding GFF annotation file is available
-- Paired-end FASTQ files are available for each isolate
+- Paired-end genomic DNA FASTQ files are available for each isolate
 
 ## Repository Structure
 
