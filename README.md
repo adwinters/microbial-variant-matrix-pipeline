@@ -14,9 +14,9 @@ The pipeline performs:
 The workflow can be applied to microbial isolate whole-genome sequencing datasets provided that:
 
 - A reference FASTA file is available
-- A corresponding GFF annotation file is available
+- A GFF annotation file generated from the same reference assembly is available
 - Paired-end genomic DNA FASTQ files are available for each isolate
-
+  
 
 ## Software Requirements
 
