@@ -119,7 +119,7 @@ Align reads to a reference genome and perform joint variant calling.
 
 ## Usage
 
-```bash
+```text
 bash call_variants.sh \
     path/to/reference/genome.fna \
     path/to/trimmed_fastq \
@@ -133,49 +133,51 @@ Paired-end FASTQ files
 
 
 ## Outputs
+```text
 results/
 ├── variants.vcf
 └── variant_summary.txt
-
+```
 
 ### Example Variant Summary
-
+```text
 Sample     Total_variants    SNPs    Indels
 Isolate1   58364             56663   1701
 Isolate2   57902             56200   1702
 Isolate3   57486             55792   1694
-
+```
 
 # Step 2: Build Product-Level Variant Matrix
 
 Convert variant calls into a sample-by-product matrix using the reference annotation.
 
 ## Usage
-
+```text
 python3 build_product_variant_matrix.py \
     results/variants.vcf \
     reference/genome.gff \
     results
+```
 
 ## Inputs
-
+```text
 variants.vcf
 genome.gff
-
+```
 
 ## Outputs
-
+```text
 results/
 ├── variants_table.tsv
 └── variants_per_product_matrix.csv
-
+```
 
 The matrix structure is:
-
+```text
 Sample      Cas1   Tet(Q)   CfxA
 Isolate1      2       5       0
 Isolate2      1       8       3
-
+```
 
 
 # Step 3: Generate Curated Product List
@@ -193,15 +195,15 @@ Current targets include:
 - Transcriptional regulators
 
 ## Usage
-
+```text
 bash select_products.sh results
-
+```
 
 ## Output
-
+```text
 results/
 └── selected_genes.tsv
-
+```
 
 # Step 4: Generate Heatmaps
 
@@ -212,7 +214,7 @@ The heatmap script supports two modes:
 Plot the most variable products across all isolates.
 
 ### Default (Top 20 Products)
-
+```text
 python3 plot_selected_products_heatmap.py \
     results/variants_per_product_matrix.csv
 
@@ -220,14 +222,15 @@ python3 plot_selected_products_heatmap.py \
 
 python3 plot_selected_products_heatmap.py \
     results/variants_per_product_matrix.csv \
-    20
+    50
+```
 
 Outputs:
-
+```text
 results/
 ├── variants_per_product_heatmap_top20.png
 └── products_plotted_top20.tsv
-
+```
 
 ### Example Output
 
@@ -239,25 +242,25 @@ The heatmap displays products ranked by variability across isolates.
 ## B. Curated Product Panel
 
 Plot products listed in:
-
+```text
 selected_genes.tsv
-
+```
 
 Invariant products are automatically removed before plotting.
 
 ### Usage
-
+```text
 python3 plot_selected_products_heatmap.py \
     results/variants_per_product_matrix.csv \
     results/selected_genes.tsv
-
+```
 
 Outputs:
-
+```text
 results/
 ├── variants_per_product_heatmap_selected.png
 └── products_plotted_selected.tsv
-
+```
 
 ### Example Output
 
@@ -267,7 +270,7 @@ The heatmap displays a curated panel of biologically relevant gene products sele
 
 
 ## Pipeline Outputs
-
+```text
 variants.vcf
 variant_summary.txt
 variants_table.tsv
@@ -279,5 +282,5 @@ products_plotted_topN.tsv
 
 variants_per_product_heatmap_selected.png
 variants_per_product_heatmap_topN.png
-
+```
 
