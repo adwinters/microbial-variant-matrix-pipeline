@@ -325,8 +325,8 @@ python3 plot_variant_product_heatmap.py \
 Outputs:
 ```text
 results/
-├── variants_per_product_heatmap_top20.png
-└── products_plotted_top20.tsv
+├── variants_per_product_heatmap_top30.png
+└── products_plotted_top30.tsv
 ```
 
 ### Example Output
