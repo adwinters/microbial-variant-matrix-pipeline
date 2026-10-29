@@ -319,7 +319,7 @@ python3 plot_variant_product_heatmap.py \
 ```text
 python3 plot_variant_product_heatmap.py \
     results/variants_per_product_matrix.filtered.csv \
-    50
+    30
 ```
 
 Outputs:
