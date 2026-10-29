@@ -1,0 +1,25 @@
+# One search pattern per line (case-insensitive regular expression).
+# Only the first tab-separated column is used; the second column is a note.
+# ^ and $ require an exact name, so '^DNA primase$' will not match
+# 'bifunctional DNA primase/helicase'.
+BlaI/MecI/CopY	BlaI/MecI/CopY family transcriptional regulator
+endonuclease Cas2$	CRISPR-associated endonuclease Cas2
+CfxA	CfxA family broad-spectrum class A beta-lactamase
+mismatch repair protein MutS$	DNA mismatch repair protein MutS
+^DNA primase$	DNA primase
+FtsB	FtsB family cell division protein
+FtsK/SpoIIIE	FtsK/SpoIIIE family DNA translocase
+LrgB	LrgB family protein
+LuxR C-terminal	LuxR C-terminal-related transcriptional regulator
+LysE	LysE family translocator
+MATE family	MATE family efflux transporter
+MarR	MarR family winged helix-turn-helix transcriptional regulator
+efflux RND transporter periplasmic	efflux RND transporter periplasmic adaptor subunit
+^hemolysin family protein$	hemolysin family protein
+hydrogen peroxide-inducible	hydrogen peroxide-inducible genes activator
+^penicillin-binding protein$	penicillin-binding protein
+sialidase	sialidase family protein
+NhaD	sodium:proton antiporter NhaD
+thiol-activated cytolysin	thiol-activated cytolysin family protein
+Cas9$	type II CRISPR RNA-guided endonuclease Cas9
+endonuclease Cas1$	type II CRISPR-associated endonuclease Cas1
