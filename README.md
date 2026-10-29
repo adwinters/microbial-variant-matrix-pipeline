@@ -376,7 +376,7 @@ The heatmap displays a curated panel of biologically relevant gene products sele
 - The reference and the GFF must match. Genes that are not in the reference cannot be detected.
 - Variants and coverage are pooled by product name, so products with many copies or generic names (for example `hypothetical protein`) combine all genes with that name.
 - Repeated and mobile-element products (transposases, integrases) can show variants caused by mis-mapped reads.
-- Sequencing errors in homopolymer runs can make read and assembly samples differ in indel counts. Use --snps-only when comparing samples from both.
+- Sequencing errors in homopolymer runs can make read and assembly samples differ in indel counts. Use '--snps-only' when comparing samples from both.
 - A product with the same value in every covered sample can be conserved (0 variants) or a fixed difference from the reference (the same variants in all samples).
 - Sequencing depth still matters for isolate reads. `-c` and `--min-coverage` define what counts as covered.
 
