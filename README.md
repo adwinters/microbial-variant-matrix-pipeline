@@ -247,7 +247,7 @@ A blank cell means the product was not adequately covered in that sample. It is 
 
 # Step 3: Generate Curated Product List
 
-Create a biologically curated list of products of interest from the filtered matrix.
+Create a biologically curated list of products of interest. Products must be chosen from the `product` names annotated in the reference GFF, and spelled exactly as they appear there. Only products that also survive the coverage filter (that is, are present in the filtered matrix) are kept.
 
 The list of products is defined inside `select_products.sh`. Edit it for your organism or project.
 
