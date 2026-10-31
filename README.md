@@ -377,9 +377,10 @@ The heatmap displays a curated panel of biologically relevant gene products sele
 - Variants and coverage are pooled by product name, so products with many copies or generic names (for example `hypothetical protein`) combine all genes with that name.
 - A variant that falls in overlapping genes is counted for only one of them (the first in the GFF).
 - Repeated and mobile-element products (transposases, integrases) can show variants caused by mis-mapped reads.
-- Sequencing errors in homopolymer runs can make read and assembly samples differ in indel counts. Use `--snps-only` when comparing samples from both. In a test of two isolates, each run as reads and as an assembly, the product-level results were nearly identical, and `--snps-only` removed most of the remaining differences.
+- Sequencing errors in homopolymer runs can make read and assembly samples differ in indel counts. Use `--snps-only` when comparing samples from both.
 - A product with the same value in every covered sample can be conserved (0 variants) or a fixed difference from the reference (the same variants in all samples).
 - Sequencing depth affects which genes count as covered in isolate reads. Coverage is set by `-c` in `call_variants.sh` (minimum depth) and `--min-coverage` in `build_product_variant_matrix.py` (fraction of the gene).
+- In a test of 28 isolates, each analyzed both as reads and as an assembly, the two versions of an isolate had the same variant count for 96.6% of product counts. With `--snps-only`, this rose to 98.2%. Most remaining differences were in multi-copy gene families (for example, TonB-dependent receptors).
 
 
 ## Pipeline Outputs
